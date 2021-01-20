@@ -54,7 +54,6 @@ import org.jitsi.xmpp.extensions.colibri.*;
 import org.jitsi.xmpp.extensions.jingle.*;
 import org.jitsi_modified.sctp4j.*;
 import org.json.simple.*;
-
 import java.nio.*;
 import java.time.*;
 import java.util.*;
@@ -180,7 +179,7 @@ public class Endpoint
     /**
      * The {@link Transceiver} which handles receiving and sending of (S)RTP.
      */
-    private final Transceiver transceiver;
+    private final si.dlabs.nlj.Transceiver transceiver;
 
     /**
      * The set of {@link ChannelShim}s associated with this endpoint. This
@@ -264,7 +263,7 @@ public class Endpoint
 
         creationTime = clock.instant();
         diagnosticContext = conference.newDiagnosticContext();
-        transceiver = new Transceiver(
+        transceiver = new si.dlabs.nlj.Transceiver(
             id,
             TaskPools.CPU_POOL,
             TaskPools.CPU_POOL,
@@ -1380,7 +1379,7 @@ public class Endpoint
     /**
      * @return this {@link Endpoint}'s transceiver.
      */
-    public Transceiver getTransceiver()
+    public si.dlabs.nlj.Transceiver getTransceiver()
     {
         return transceiver;
     }
